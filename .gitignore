@@ -1,0 +1,26 @@
+# Vim
+*.swo
+*.swp
+
+# Python
+*__pycache__*
+*egg-info
+
+# Data and logs
+data/
+data_out/
+logs/
+*.png
+*.jpeg
+*.pkl
+checkpoints/
+test_results/
+figures/
+goals/
+*.tar.gz
+
+# VSCode
+.vscode/
+
+# Profiling
+*.dat
