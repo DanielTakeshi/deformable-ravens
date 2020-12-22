@@ -87,8 +87,7 @@ To inspect the data, use `ravens/dataset.py`.
 For deformables, we actually use a separate `load.py` script, due to some
 issues with creating multiple environments.
 
-See `gCloud.md` for commands we can use for experiments (some of which are
-gCloud-specific).
+See `Commands.md` for commands to reproduce experimental results.
 
 ## Downloading the Data
 
@@ -108,6 +107,12 @@ deformable-ravens/
     goals/
         bag-color-goal_20_goals_480Hz_Nov19.tar.gz
 ```
+
+*Note*: if you generate data using the `main.py` script, then it will
+automatically create the `data/` scripts, and similarly for the
+`generate_goals.py` script. You only need to manually create `data/` and
+`goals/` if you only want to download and get pre-existing datasets in the
+right spot.
 
 Then untar both of them in their respective directories:
 
