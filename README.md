@@ -33,7 +33,7 @@ conda activate py3-defs
 Then install:
 
 ```
-./install_python_ubunutu.sh
+./install_python_ubuntu.sh
 ```
 
 **Note I**: It is tested on **Ubuntu 18.04**. We have not tried other Ubuntu
