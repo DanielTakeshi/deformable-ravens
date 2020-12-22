@@ -12,9 +12,8 @@ Contents of this README:
 
 ## Installation
 
-*Note: Instructions here are for local machines, not for gCloud.* It is tested
-on a standard Ubuntu 18.04 machine. Please see `gCloud.md` for details on
-gCloud usage.
+*Note: Instructions here are for local machines, not for gCloud.* Please see `gCloud.md` for details on gCloud usage,
+however it may be harder for us to provide support for this use case.
 
 First, get conda on the machine if it isn't there already:
 
@@ -37,11 +36,14 @@ Then install:
 ./install_python_ubunutu.sh
 ```
 
-**Note I**: Installing TensorFlow using conda is usually easier than pip
+**Note I**: It is tested on **Ubuntu 18.04**. We have not tried other Ubuntu
+versions or other operating systems.
+
+**Note II**: Installing TensorFlow using conda is usually easier than pip
 because the conda version will ship with the correct CUDA and cuDNN libraries,
 whereas the pip version is a nightmare regarding version compatibility.
 
-**Note II**: the code has only been tested with **PyBullet 3.0.4**. In fact,
+**Note III**: the code has only been tested with **PyBullet 3.0.4**. In fact,
 there are some places which explicitly hard-code this requirement. Using later
 versions may work but is not recommended.
 
