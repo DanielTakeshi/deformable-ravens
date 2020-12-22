@@ -82,12 +82,10 @@ PyBullet GUI (but not used for large-scale experiments). The general logic for
   TensorBoard][4]. **Note**: it will do multiple training runs for statistical
   significance.
 
-To inspect the data, use `ravens/dataset.py`.
-
 For deformables, we actually use a separate `load.py` script, due to some
 issues with creating multiple environments.
 
-See `Commands.md` for commands to reproduce experimental results.
+**See `Commands.md` for commands to reproduce experimental results.**
 
 ## Downloading the Data
 
@@ -121,7 +119,8 @@ tar -zxvf bag-color-goal_1000_demos_480Hz_filtered_Nov13.tar.gz
 tar -zxvf bag-color-goal_20_goals_480Hz_Nov19.tar.gz
 ```
 
-Now the data should be ready! If you want to inspect and debug the data, for example the goals data, then do:
+Now the data should be ready! If you want to inspect and debug the data, for
+example the goals data, then do:
 
 ```
 python ravens/dataset.py --path goals/bag-color-goal/
@@ -130,7 +129,8 @@ python ravens/dataset.py --path goals/bag-color-goal/
 Note that by default it saves any content in `goals/` to `goals_out/` and data
 in `data/` to `data_out/`. Also, by default, it will download and save images.
 This can be very computationally intensive if you do this for the full 1000
-demos. (The `goals/` data only has 20 demos.)
+demos. (The `goals/` data only has 20 demos.) You can change this easily in the
+main method of `ravens/datasets.py`.
 
 Running the script will print out some interesting data statistics for you.
 
