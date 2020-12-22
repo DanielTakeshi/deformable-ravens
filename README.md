@@ -121,8 +121,18 @@ tar -zxvf bag-color-goal_1000_demos_480Hz_filtered_Nov13.tar.gz
 tar -zxvf bag-color-goal_20_goals_480Hz_Nov19.tar.gz
 ```
 
+Now the data should be ready! If you want to inspect and debug the data, for example the goals data, then do:
 
-**TODO will be ready in 1 hour ...**
+```
+python ravens/dataset.py --path goals/bag-color-goal/
+```
+
+Note that by default it saves any content in `goals/` to `goals_out/` and data
+in `data/` to `data_out/`. Also, by default, it will download and save images.
+This can be very computationally intensive if you do this for the full 1000
+demos. (The `goals/` data only has 20 demos.)
+
+Running the script will print out some interesting data statistics for you.
 
 
 ## Miscellaneous
