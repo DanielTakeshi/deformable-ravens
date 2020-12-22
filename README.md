@@ -2,14 +2,13 @@
 
 Code for the paper *Learning to Rearrange Deformable Cables, Fabrics, and Bags
 with Goal-Conditioned Transporter Networks*. [Here is the project website][5].
-Contents:
+Contents of this README:
 
 - [Installation](#installation)
 - [Environments and Tasks](#environments-and-tasks)
 - [Code Usage](#code-usage)
 - [Miscellaneous](#miscellaneous)
 
-Stand-alone scripts for testing deformables are in the `scratch` directory.
 
 ## Installation
 
@@ -24,11 +23,12 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-Then, create a new Python 3.7 conda environment and activate it:
+Then, create a new Python 3.7 conda environment (e.g., named "py3-defs") and
+activate it:
 
 ```
-conda create -n py3-bullet python=3.7
-conda activate py3-bullet
+conda create -n py3-defs python=3.7
+conda activate py3-defs
 ```
 
 Then install:
@@ -37,9 +37,9 @@ Then install:
 ./install_python_ubunutu.sh
 ```
 
-**Note I**: Installing TensorFlow using conda is likely easier than pip because
-the conda version will ship with the correct CUDA and cuDNN libraries, whereas
-the pip version is a nightmare regarding version compatibility.
+**Note I**: Installing TensorFlow using conda is usually easier than pip
+because the conda version will ship with the correct CUDA and cuDNN libraries,
+whereas the pip version is a nightmare regarding version compatibility.
 
 **Note II**: the code has only been tested with **PyBullet 3.0.4**. In fact,
 there are some places which explicitly hard-code this requirement. Using later
@@ -90,8 +90,8 @@ gCloud-specific).
 
 # Miscellaneous
 
-If you have questions, **please use the public issue tracker**, rather than
-emailing the authors.
+If you have questions, **please use the public issue tracker**, so that all of
+us can benefit from your questions.
 
 If you find this code or research paper helpful, please consider citing it:
 
