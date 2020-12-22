@@ -95,6 +95,27 @@ gCloud-specific).
 We normally generate 1000 demos for each of the tasks. However, this can take a
 long time, especially for the bag tasks. We have pre-generated datasets for all
 the tasks we tested with [on the project website][5]. Here's how to do this.
+For example, suppose we want to download demonstration data for the
+"bag-color-goal" task. Download the demonstration data from the website. Since
+this is also a goal-conditioned task, download the *goal* demonstrations as
+well. Make new `data/` and `goals/` directories and put the tar.gz files in the
+respective directories:
+
+```
+deformable-ravens/
+    data/
+        bag-color-goal_1000_demos_480Hz_filtered_Nov13.tar.gz
+    goals/
+        bag-color-goal_20_goals_480Hz_Nov19.tar.gz
+```
+
+Then untar both of them in their respective directories:
+
+```
+tar -zxvf bag-color-goal_1000_demos_480Hz_filtered_Nov13.tar.gz
+tar -zxvf bag-color-goal_20_goals_480Hz_Nov19.tar.gz
+```
+
 
 **TODO will be ready in 1 hour ...**
 
