@@ -1,21 +1,21 @@
 # DeformableRavens
 
 Code for the paper *Learning to Rearrange Deformable Cables, Fabrics, and Bags
-with Goal-Conditioned Transporter Networks*. [Here is the project website][5].
-Contents of this README:
+with Goal-Conditioned Transporter Networks*. [Here is the project website][5],
+which also contains the data we used to train policies.  Contents of this
+README:
 
 - [Installation](#installation)
 - [Environments and Tasks](#environments-and-tasks)
 - [Code Usage](#code-usage)
+- [Downloading the Data](#downloading-the-data)
 - [Miscellaneous](#miscellaneous)
 
 
 ## Installation
 
-*Note: Instructions here are for local machines, not for gCloud.* Please see `gCloud.md` for details on gCloud usage,
-however it may be harder for us to provide support for this use case.
-
-First, get conda on the machine if it isn't there already:
+This is how to get the code running on a local machine. First, get conda on the
+machine if it isn't there already:
 
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -90,7 +90,16 @@ issues with creating multiple environments.
 See `gCloud.md` for commands we can use for experiments (some of which are
 gCloud-specific).
 
-# Miscellaneous
+## Downloading the Data
+
+We normally generate 1000 demos for each of the tasks. However, this can take a
+long time, especially for the bag tasks. We have pre-generated datasets for all
+the tasks we tested with [on the project website][5]. Here's how to do this.
+
+**TODO will be ready in 1 hour ...**
+
+
+## Miscellaneous
 
 If you have questions, **please use the public issue tracker**, so that all of
 us can benefit from your questions.
