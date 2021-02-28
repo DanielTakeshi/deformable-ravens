@@ -1,6 +1,6 @@
 # DeformableRavens
 
-Code for the paper *Learning to Rearrange Deformable Cables, Fabrics, and Bags
+Code for the ICRA 2021 paper *Learning to Rearrange Deformable Cables, Fabrics, and Bags
 with Goal-Conditioned Transporter Networks*. [Here is the project website][5],
 which also contains the data we used to train policies.  Contents of this
 README:
@@ -49,7 +49,7 @@ versions may work but is not recommended.
 
 ## Environments and Tasks
 
-This repository contains tasks in the ICRA 2021 submission and the predecessor
+This repository contains tasks in the ICRA 2021 paper and the predecessor
 paper on Transporters (presented at CoRL 2020). For the latter paper, there are
 (roughly) 10 tasks that came pre-shipped; the Transporters paper doesn't test
 with `pushing` or `insertion-translation`, but tests with all others. See
@@ -144,10 +144,10 @@ If you find this code or research paper helpful, please consider citing it:
 
 ```
 @inproceedings{seita_bags_2021,
-    author  = {Daniel Seita and Pete Florence and Jonathan Tompson and Erwin Coumans and Vikas Sindhwani and Ken Goldberg and Andy Zeng},
-    title   = {{Learning to Rearrange Deformable Cables, Fabrics, and Bags with Goal-Conditioned Transporter Networks}},
-    journal = {arXiv preprint arXiv:2012.03385},
-    Year    = {2020}
+    author    = {Daniel Seita and Pete Florence and Jonathan Tompson and Erwin Coumans and Vikas Sindhwani and Ken Goldberg and Andy Zeng},
+    title     = {{Learning to Rearrange Deformable Cables, Fabrics, and Bags with Goal-Conditioned Transporter Networks}},
+    booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+    Year      = {2021}
 }
 ```
 
