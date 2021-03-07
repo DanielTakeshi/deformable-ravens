@@ -1,3 +1,6 @@
+**NOTE**: this code is based heavily on [the Ravens code base from Google][6]
+and retains the same license.
+
 # DeformableRavens
 
 Code for the paper *Learning to Rearrange Deformable Cables, Fabrics, and Bags
@@ -156,3 +159,4 @@ If you find this code or research paper helpful, please consider citing it:
 [3]:https://partner-code.googlesource.com/project-reach/+/75459a560ea9ae4b9d7283ef39d4a4d99598ab81
 [4]:https://stackoverflow.com/a/56537286/3287820
 [5]:https://berkeleyautomation.github.io/bags/
+[6]:https://github.com/google-research/ravens
