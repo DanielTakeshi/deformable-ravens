@@ -12,7 +12,7 @@ set -uexo pipefail
 
 echo "Installing Python libraries..."
 conda install ipython
-conda install tensorflow-gpu==2.2
+conda install tensorflow-gpu==2.4.1
 
 pip install pybullet==3.0.4
 pip install packaging==19.2
@@ -24,7 +24,7 @@ pip install scikit-image==0.17.2
 pip install gputil==1.4.0
 pip install circle-fit==0.1.3
 
-pip install tensorflow-addons==0.11.1
+pip install tensorflow-addons==0.13.0
 pip install tensorflow_hub==0.8.0
 
 pip install -e .
