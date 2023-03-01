@@ -270,7 +270,7 @@ class TransporterAgent:
             image[:, :, :3] = (image[:, :, :3] / 255 - color_mean) / color_std
             image[:, :, 3:] = (image[:, :, 3:] - depth_mean) / depth_std
         else:
-            raise ValueError(input.shape)
+            raise ValueError(image.shape)
         return image
 
     def get_heightmap(self, obs, configs):
