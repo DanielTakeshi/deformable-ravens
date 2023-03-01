@@ -436,6 +436,8 @@ class GoalTransporterAgent(TransporterAgent):
     and then combine the resulting features with the pick and placing networks for better
     goal-conditioning. This uses our new `TransportGoal` architecture. We don't stack the
     input and target images, so we can directly use `self.input_shape` for both modules.
+
+    NOTE(daniel) from March 2023: this is Transporter-Goal-Split in the paper.
     """
 
     def __init__(self, name, task, num_rotations=24):
@@ -463,6 +465,9 @@ class GoalNaiveTransporterAgent(TransporterAgent):
     However, this means we can't actually use the models trained in test time unless we also change
     this setting. It won't throw an error (number of parameters in Transport model is the same) but
     it means the logic is bad; the filters will be applied on the 'wrong' images.
+
+    NOTE(daniel) from March 2023: we did not report results for this in the paper. Actually
+    it would not make sense if the target image were not given to the Attention module.
     """
 
     def __init__(self, name, task, num_rotations=24):
@@ -492,6 +497,8 @@ class GoalSuperNaiveTransporterAgent(TransporterAgent):
     Transporter-Goal does, but I ended up training without initially, and only realized
     this after the fact, hence keeping crop_bef_q unspecified for now, which means it
     defaults to the True setting in Transport() class.
+
+    NOTE(daniel) from March 2023: this is Transporter-Goal-Stack in the paper.
     """
 
     def __init__(self, name, task, num_rotations=24):

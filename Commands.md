@@ -101,7 +101,7 @@ probably not worth it.
 
 ```
 TASK=cable-shape-notarget  # cable-shape-notarget, cable-line-notarget, insertion-goal, cloth-flat-notarget
-AGENT=transporter-goal     # transporter-goal, transporter-goal-naive, gt_state, gt_state_2_step
+AGENT=transporter-goal     # transporter-goal, transporter-goal-snaive, gt_state, gt_state_2_step
 
 python main.py --gpu=0 --task=${TASK} --agent=${AGENT} --num_demos=1
 python main.py --gpu=0 --task=${TASK} --agent=${AGENT} --num_demos=10
@@ -144,7 +144,7 @@ done
 ```
 HZ=240
 ROTS=1
-AGENT=transporter-goal     # transporter-goal, transporter-goal-naive, gt_state, gt_state_2_step
+AGENT=transporter-goal     # transporter-goal, transporter-goal-snaive, gt_state, gt_state_2_step
 TASK=cable-shape-notarget  # cable-shape-notarget, cable-line-notarget, insertion-goal
 
 for tr in 0 1 2; do
@@ -189,7 +189,7 @@ Only `cloth-flat-target` and `bag-color-goal` apply here.
 ```
 HZ=480
 ROTS=1
-AGENT=transporter-goal    # transporter-goal, transporter-goal-naive, gt_state, gt_state_2_step
+AGENT=transporter-goal    # transporter-goal, transporter-goal-snaive, gt_state, gt_state_2_step
 TASK=cloth-flat-notarget  # bag-color-goal
 
 for tr in 0 1 2; do
