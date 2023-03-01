@@ -258,8 +258,19 @@ class TransporterAgent:
         depth_mean = 0.00509261
         color_std = 0.07276466
         depth_std = 0.00903967
-        image[:, :, :3] = (image[:, :, :3] / 255 - color_mean) / color_std
-        image[:, :, 3:] = (image[:, :, 3:] - depth_mean) / depth_std
+        if image.shape[2] == 12:
+            # This should only be for the Attention module in GCTN.
+            assert self.use_goal_image
+            image[:, :, 0:3] = (image[:, :, 0:3] / 255 - color_mean) / color_std
+            image[:, :, 3:6] = (image[:, :, 3:6] - depth_mean) / depth_std
+            image[:, :, 6:9] = (image[:, :, 6:9] / 255 - color_mean) / color_std
+            image[:, :, 9:]  = (image[:, :, 9:] - depth_mean) / depth_std
+        elif image.shape[2] == 6:
+            # Transport-Goal calls processing separately for input and goal.
+            image[:, :, :3] = (image[:, :, :3] / 255 - color_mean) / color_std
+            image[:, :, 3:] = (image[:, :, 3:] - depth_mean) / depth_std
+        else:
+            raise ValueError(input.shape)
         return image
 
     def get_heightmap(self, obs, configs):
