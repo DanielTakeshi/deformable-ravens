@@ -140,8 +140,7 @@ Running the script will print out some interesting data statistics for you.
 
 ## Miscellaneous
 
-If you have questions, **please use the public issue tracker**, so that all of
-us can benefit from your questions.
+If you have questions, please use the public issue tracker.
 
 If you find this code or research paper helpful, please consider citing it:
 

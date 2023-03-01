@@ -258,8 +258,19 @@ class TransporterAgent:
         depth_mean = 0.00509261
         color_std = 0.07276466
         depth_std = 0.00903967
-        image[:, :, :3] = (image[:, :, :3] / 255 - color_mean) / color_std
-        image[:, :, 3:] = (image[:, :, 3:] - depth_mean) / depth_std
+        if image.shape[2] == 12:
+            # This should only be for the Attention module in GCTN.
+            assert self.use_goal_image
+            image[:, :, 0:3] = (image[:, :, 0:3] / 255 - color_mean) / color_std
+            image[:, :, 3:6] = (image[:, :, 3:6] - depth_mean) / depth_std
+            image[:, :, 6:9] = (image[:, :, 6:9] / 255 - color_mean) / color_std
+            image[:, :, 9:]  = (image[:, :, 9:] - depth_mean) / depth_std
+        elif image.shape[2] == 6:
+            # Transport-Goal calls processing separately for input and goal.
+            image[:, :, :3] = (image[:, :, :3] / 255 - color_mean) / color_std
+            image[:, :, 3:] = (image[:, :, 3:] - depth_mean) / depth_std
+        else:
+            raise ValueError(image.shape)
         return image
 
     def get_heightmap(self, obs, configs):
@@ -436,6 +447,8 @@ class GoalTransporterAgent(TransporterAgent):
     and then combine the resulting features with the pick and placing networks for better
     goal-conditioning. This uses our new `TransportGoal` architecture. We don't stack the
     input and target images, so we can directly use `self.input_shape` for both modules.
+
+    NOTE(daniel) from March 2023: this is Transporter-Goal-Split in the paper.
     """
 
     def __init__(self, name, task, num_rotations=24):
@@ -463,6 +476,9 @@ class GoalNaiveTransporterAgent(TransporterAgent):
     However, this means we can't actually use the models trained in test time unless we also change
     this setting. It won't throw an error (number of parameters in Transport model is the same) but
     it means the logic is bad; the filters will be applied on the 'wrong' images.
+
+    NOTE(daniel) from March 2023: we did not report results for this in the paper. Actually
+    it would not make sense if the target image were not given to the Attention module.
     """
 
     def __init__(self, name, task, num_rotations=24):
@@ -492,6 +508,8 @@ class GoalSuperNaiveTransporterAgent(TransporterAgent):
     Transporter-Goal does, but I ended up training without initially, and only realized
     this after the fact, hence keeping crop_bef_q unspecified for now, which means it
     defaults to the True setting in Transport() class.
+
+    NOTE(daniel) from March 2023: this is Transporter-Goal-Stack in the paper.
     """
 
     def __init__(self, name, task, num_rotations=24):
