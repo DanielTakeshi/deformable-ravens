@@ -14,6 +14,8 @@ README:
 - [Downloading the Data](#downloading-the-data)
 - [Miscellaneous](#miscellaneous)
 
+For *physical* experiments, see this code: https://github.com/DanielTakeshi/gctn_physical
+
 
 ## Installation
 
